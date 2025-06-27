@@ -10,22 +10,26 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, icon }) => {
   return (
-    <div className="bg-portfolio-white/10 backdrop-blur-md border-2 border-portfolio-pink/30 rounded-3xl p-8 transform hover:scale-105 transition-all duration-300">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="bg-portfolio-yellow text-portfolio-black p-3 rounded-full">
+    <div className="bg-portfolio-white rounded-3xl p-8 transform hover:scale-105 transition-all duration-300 shadow-lg relative">
+      <div className="flex items-start justify-between mb-6">
+        <h3 className="text-2xl font-fredoka text-portfolio-black">{title}</h3>
+        <div className="bg-portfolio-purple text-portfolio-white p-2 rounded-full">
           {icon}
         </div>
-        <h3 className="text-2xl font-fredoka text-portfolio-yellow">{title}</h3>
       </div>
       
-      <p className="text-portfolio-white mb-6 leading-relaxed">{description}</p>
+      <p className="text-portfolio-black mb-6 leading-relaxed">{description}</p>
       
-      <Button className="bg-portfolio-pink hover:bg-portfolio-purple text-white font-kalam px-6 py-2 rounded-full transform hover:scale-105 transition-all duration-300">
-        Check Out! 🎯
+      <Button className="bg-portfolio-yellow hover:bg-portfolio-yellow/90 text-portfolio-black font-kalam px-6 py-2 rounded-full font-bold transform hover:scale-105 transition-all duration-300">
+        Check Out
       </Button>
       
-      {/* Decorative elements */}
-      <div className="absolute top-4 right-4 text-2xl animate-float">🌸</div>
+      {/* Decorative doodle */}
+      <div className="absolute bottom-4 right-4 text-portfolio-purple">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M10 20 Q20 10 30 20 Q20 30 10 20" stroke="currentColor" strokeWidth="2" fill="none"/>
+        </svg>
+      </div>
     </div>
   );
 };
