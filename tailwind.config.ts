@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom portfolio colors
+				'portfolio-pink': '#FF619B',
+				'portfolio-yellow': '#FDFE48',
+				'portfolio-purple': '#8E8BFB',
+				'portfolio-black': '#000000',
+				'portfolio-white': '#FFFFFF'
+			},
+			fontFamily: {
+				'kalam': ['Kalam', 'cursive'],
+				'fredoka': ['Fredoka One', 'cursive']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +95,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce-fun': {
+					'0%, 100%': {
+						transform: 'translateY(-5%)',
+						animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)'
+					},
+					'50%': {
+						transform: 'translateY(0)',
+						animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
+					}
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-3deg)' },
+					'50%': { transform: 'rotate(3deg)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-fun': 'bounce-fun 1s infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},
